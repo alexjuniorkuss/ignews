@@ -4,7 +4,7 @@ import { stripe } from "../../services/stripe";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
-        const session = await getSession({ req })
+        const session = await getSession({ req });
         
         const stripeCustomer = await stripe.customers.create({
             email: session.user.email,
@@ -19,8 +19,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
            ],
            mode: 'subscription',
            allow_promotion_codes:true,
-           success_url: process.env.STIPE_SUCESS_URL,
-           cancel_url: process.env.STIPE_CANCEL_URL
+           success_url: process.env.STRIPE_SUCESS_URL,
+           cancel_url: process.env.STRIPE_CANCEL_URL
 
        }) 
      
