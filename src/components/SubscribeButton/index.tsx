@@ -13,13 +13,13 @@ export function SubscribeButton() {
         if (!session) {
             signIn('github')
       
-            return
+            return;
           }
       
           if (session.activeSubscription) {
             router.push('/posts')
       
-            return
+            return;
           }
 
         try{
