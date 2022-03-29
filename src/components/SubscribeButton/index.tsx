@@ -6,7 +6,6 @@ import styles from './styles.module.scss';
 
 export function SubscribeButton() {
     const { data: session } = useSession()
-
     const router = useRouter()
 
     async function handleSubscribe() {
